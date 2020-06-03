@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="WikiWebKIT" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wt4-rz-B7g">
+                                <rect key="frame" x="132" y="523" width="150" height="35"/>
+                                <color key="backgroundColor" red="0.85490196078431369" green="0.88235294117647056" blue="0.90588235294117647" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="150" id="hJc-YY-F70"/>
+                                    <constraint firstAttribute="height" constant="35" id="plU-gt-0uM"/>
+                                </constraints>
+                                <state key="normal" title="GO">
+                                    <color key="titleColor" red="0.91764705879999997" green="0.60392156860000001" blue="0.58823529409999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="webKitButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="BmC-lm-4c5"/>
+                                    <segue destination="FZU-if-dtf" kind="presentation" identifier="webViewSegue" id="GAq-AO-uzi"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="AIn-XU-3Zs">
+                                <rect key="frame" x="107" y="423" width="200" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="50" id="6cO-eD-wiG"/>
+                                    <constraint firstAttribute="width" constant="200" id="K3P-6k-PcC"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" red="0.15294117647058825" green="0.28627450980392155" blue="0.42745098039215684" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="wt4-rz-B7g" firstAttribute="top" secondItem="AIn-XU-3Zs" secondAttribute="bottom" constant="50" id="0pi-Wm-oGc"/>
+                            <constraint firstItem="AIn-XU-3Zs" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="BLq-vD-Ifh"/>
+                            <constraint firstItem="AIn-XU-3Zs" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="D6I-mQ-HNY"/>
+                            <constraint firstItem="wt4-rz-B7g" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="r9L-je-94p"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="textField" destination="AIn-XU-3Zs" id="NoX-MY-4ee"/>
+                        <outlet property="uiButton" destination="wt4-rz-B7g" id="R9v-C9-5iX"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="139" y="127"/>
+        </scene>
+        <!--Web Kit View Controller-->
+        <scene sceneID="uIZ-Bc-zpK">
+            <objects>
+                <viewController id="FZU-if-dtf" customClass="WebKitViewController" customModule="WikiWebKIT" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="fbt-nI-2yV">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fIf-uP-bT6">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.1529411765" green="0.28627450980000002" blue="0.42745098040000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="fIf-uP-bT6" firstAttribute="top" secondItem="tyc-5q-oiI" secondAttribute="top" id="0vN-yU-Mda"/>
+                            <constraint firstItem="fIf-uP-bT6" firstAttribute="leading" secondItem="tyc-5q-oiI" secondAttribute="leading" id="GYZ-DG-LOW"/>
+                            <constraint firstItem="tyc-5q-oiI" firstAttribute="trailing" secondItem="fIf-uP-bT6" secondAttribute="trailing" id="sdb-Rd-NvN"/>
+                            <constraint firstAttribute="bottom" secondItem="fIf-uP-bT6" secondAttribute="bottom" id="uM4-rS-GiJ"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="tyc-5q-oiI"/>
+                    </view>
+                    <connections>
+                        <outlet property="webKit" destination="fIf-uP-bT6" id="1Ws-Oj-6vh"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3G0-Al-bz1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="963" y="131"/>
+        </scene>
+    </scenes>
+</document>
